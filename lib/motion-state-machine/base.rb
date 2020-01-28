@@ -68,7 +68,7 @@ module StateMachine
         raise ArgumentError, "You have to supply a :start_state option."
       end
       state start_state, options[:start_state_name]
-      self.when :waiting_for_start, do |state|
+      self.when :waiting_for_start do |state|
         state.transition_to start_state, on: :start
       end
 
